@@ -19,6 +19,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        paid {
+            applicationId "com.udacity.gradle.builditbigger.paid"
+        }
+        free {
+            applicationId "com.udacity.gradle.builditbigger.free"
+        }
+    }
 }
 
 dependencies {
@@ -26,12 +34,13 @@ dependencies {
     // Added for AdMob
     compile project(':joker')
     compile project(':jokesdisplaylib')
-    compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'com.google.android.gms:play-services-ads:9.4.0'
     compile project(path: ':backend', configuration: 'android-endpoints')
     testCompile group: 'junit', name: 'junit', version: '4.12'
     androidTestCompile group: 'junit', name: 'junit', version: '4.12'
     androidTestCompile('com.android.support.test:runner:0.4') {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    freeCompile 'com.google.android.gms:play-services-ads:9.4.0'
+    compile 'com.android.support:support-v4:24.2.0'
 }

@@ -23,7 +23,7 @@ import java.io.IOException;
 import in.msomu.jokesdisplaylib.DisplayActivity;
 
 
-public class MainActivity extends ActionBarActivity implements EndpointsAsyncTask.JokeListener {
+public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,19 +52,5 @@ public class MainActivity extends ActionBarActivity implements EndpointsAsyncTas
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void tellJoke(View view) {
-        // String joke = new Jokes().fetch();
-        // Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
-        new EndpointsAsyncTask(this).execute();
-    }
-
-    @Override
-    public void jokeReceived(String joke) {
-        Toast.makeText(this, joke, Toast.LENGTH_LONG).show();
-        Intent jokeDisplayIntent = new Intent(MainActivity.this, DisplayActivity.class);
-        jokeDisplayIntent.putExtra(Jokes.TAG, joke);
-        startActivity(jokeDisplayIntent);
     }
 }
