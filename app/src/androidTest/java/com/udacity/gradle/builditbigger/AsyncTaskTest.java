@@ -1,13 +1,13 @@
 package com.udacity.gradle.builditbigger;
 
 import android.test.AndroidTestCase;
-import android.text.TextUtils;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 /**
  * Created by msomu on 04/09/16.
+ * Test AsyncTask
  */
 public class AsyncTaskTest extends AndroidTestCase {
 

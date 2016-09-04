@@ -8,7 +8,7 @@ public class Jokes {
     private ArrayList<String> jokesCollection;
 
     public Jokes() {
-        jokesCollection = new ArrayList<String>();
+        jokesCollection = new ArrayList<>();
         jokesCollection.add("Just read that 4,153,237 people got married last year, not to cause any trouble but shouldn't that be an even number?");
         jokesCollection.add("Life is all about perspective. The sinking of the Titanic was a miracle to the lobsters in the ship's kitchen.");
         jokesCollection.add("My wife and I were happy for twenty years. Then we met.");
@@ -20,6 +20,6 @@ public class Jokes {
 
     public String fetch() {
         int randomJokeIndex = (int)Math.ceil((double)(this.numberOfJokes - 1) * Math.random());
-        return (String)this.jokesCollection.get(randomJokeIndex);
+        return this.jokesCollection.get(randomJokeIndex);
     }
 }
